@@ -14,19 +14,18 @@
     {{ else }}
     {{ .Site.Data.settings.seoMetaTags | safeHTML }}
     {{ end }}
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="72e59a17-3c00-48fe-959a-95077dea0754" type="text/javascript" async></script>
 </head>
+
 <body>
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f8e789d6893769e"></script>
-  <div class="">
+  <div class="wrapper">
     <header>
       {{ partialCached "header/topbar.html" . }}
-      {{ partialCached "header/mainmenu.html" . }}
+      {{ block "navbar" . }}{{ end }}
     </header>
     {{ block "main" . }}
     <!-- The part of the page that begins to differ between templates -->
     {{ end }}
-    <script id="CookieDeclaration" src="https://consent.cookiebot.com/72e59a17-3c00-48fe-959a-95077dea0754/cd.js" type="text/javascript" async></script>
   </div>
   {{ partialCached "footer.html" . }}
   <script src="/static/all.js"></script>

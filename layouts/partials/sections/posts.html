@@ -1,0 +1,18 @@
+{{ define "posts"}}
+    <section >
+        <div class="container">
+            <h2 class=".title">Latest Posts</h2>
+            <hr class="black"/>
+            {{ block "featured-2-col" . }}{{ end }}
+        </div>
+        <section class="moments-section mt__5">
+            <div class="container">
+                <div class="columns">
+                    {{ range first 3 (where .Pages "Section" "post") }}
+                        {{ block "posts-3-col" .}}{{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+    </section>
+{{ end }}

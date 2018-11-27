@@ -1,35 +1,15 @@
 {{ define "main" }}
 
 {{ block "hero" . }}{{ end }}
-{{ block "featured-2-col" . }}{{ end }}
-{{ block "newsletter" . }}{{ end }}
+{{ block "posts" . }}{{ end }}
 
 <section class="moments-section mt__5">
     <div class="container">
-        <div class="row">
-            <div class="column column-50 column-offset-25">
-                <div class="moments-heding align__center">
-                    <h2 class="h1">Moments</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            {{ range first 3 (where .Pages "Section" "post") }}
-                {{ block "posts-3-col" .}}{{ end }}
-            {{ end }}
-        </div>
-        {{ block "ads" . }}{{ end }}
-        <div class="row row-wrap">
-            {{ range after 3 (where .Pages "Section" "post") }} <!-- 4-col-moments -->
-            {{ block "posts-3-col" .}}{{ end }}
-            {{ end }}
-        </div>
         <div class="pagination mb__4">
-            <div class="row">
-                <div class="column column-50 align__left">
+            <div class="columns">
+                <div class="columns is-4 align__left">
                 </div>
-                <div class="column column-50 align__right">
+                <div class="is-4 align__right">
                     <a class="button next-page" href="/articles">
                         <span>More Posts</span>
                         <i class="fa fa-angle-right"></i>

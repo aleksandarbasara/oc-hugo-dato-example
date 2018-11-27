@@ -16,6 +16,7 @@
     "prettier": "prettier --write assets/js/**/*.js *.js"
   },
   "dependencies": {
+    "bulma": "^0.7.2",
     "clean-webpack-plugin": "^0.1.19",
     "font-awesome": "^4.7.0",
     "husky": "^1.2.0",
@@ -25,7 +26,6 @@
     "lodash": "^4.17.11",
     "lory.js": "^2.5.2",
     "masonry-layout": "^4.2.2",
-    "milligram": "1.3.0",
     "netlify-cli": "^2.2.0",
     "prettier": "^1.15.2",
     "scroll-lazy": "^1.0.3",

@@ -1,12 +1,8 @@
 {{ define "featured-2-col"}}
-    <section class="mt__3">
-        <div class="container">
-            <h2 class="h1">Featured</h2>
-            <hr class="black"/>
-            <div class="row mt__2">
-                {{ range first 2 ( after 1 (where .Pages "Section" "post") ) }}
-                {{ if eq .Params.featured true }}
-                <div class="column column-50">
+    <div class="columns">
+        {{ range first 2 ( after 1 (where .Pages "Section" "post") ) }}
+            {{ if eq .Params.featured true }}
+                <div class="column is-half">
                     <div class="featured-post">
                         <a href="{{ .Permalink }}">
                             <div class="featured-post__image">
@@ -19,10 +15,10 @@
                                     <i class="fa fa-user"></i>
                                     <span class="mr__1">
                                         {{ range .Params.credits }}
-                                        {{ if eq .itemType "author" }}
-                                        <!-- <a href="{{ .url }}">{{ .name }}</a>-->
-                                        {{ .name }}
-                                        {{ end }}
+                                            {{ if eq .itemType "author" }}
+                                                <!-- <a href="{{ .url }}">{{ .name }}</a>-->
+                                                {{ .name }}
+                                            {{ end }}
                                         {{ end }}
                                     </span>
                                     <i class="fa fa-clock"></i>
@@ -32,9 +28,7 @@
                         </a>
                     </div>
                 </div>
-                {{ end }}
-                {{ end }}
-            </div>    
-        </div>
-    </section>
+            {{ end }}
+        {{ end }}
+    </div>
 {{ end }}

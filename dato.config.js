@@ -101,14 +101,6 @@ module.exports = (dato, root, i18n) => {
         content: dato.articlePage.text,
     });
 
-    root.createPost(`content/videos/_index.md`, 'yaml', {
-        frontmatter: {
-            title: dato.videoPage.title,
-            seoMetaTags: toHtml(dato.videoPage.seoMetaTags),
-        },
-        content: dato.videoPage.text,
-    });
-
     // Create a `category` directory
     root.directory('content/categories', (categoriesDir) => {
         // ...and for each of the category stored online...
