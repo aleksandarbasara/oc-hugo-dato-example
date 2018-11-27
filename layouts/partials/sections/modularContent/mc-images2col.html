@@ -1,7 +1,7 @@
 {{ define "mc-images2col"}}
-    <div class="row row-wrap mc-gallery-block">
+    <div>
         {{ range .images }}
-        <div class="column column-50">
+        <div class="column is-half">
             <img src="{{ .url }}" alt="" title="" />
             <span class="image-text">{{ .credit }}</span>
         </div>

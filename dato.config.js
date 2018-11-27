@@ -130,7 +130,7 @@ module.exports = (dato, root, i18n) => {
                     publishedDate: post.createdAt,
                     heroVideo: post.heroVideo,
                     heroImage: post.heroImage.url({
-                        h: 640,
+                        h: 765,
                         auto: 'compress',
                     }),
                     credits: post.credits.toMap(),

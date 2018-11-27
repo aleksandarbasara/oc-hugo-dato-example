@@ -2,13 +2,15 @@
 
 {{ block "hero" . }}{{ end }}
 
-<section class="single-post mt__2">
+<section>
     <div class="container">
-        <div class="row row-wrap">
-            {{ block "sharingIcons" . }}{{ end }}
-            <article class="column column-60">
+        <div class="columns">
+            <div class="column is-1">
+                {{ block "sharingIcons" . }}{{ end }}
+            </div>
+            <article class="column is-11">
                 <div class="post-title">
-                    <h1 class="h2">{{ .Title }}</h1>
+                    <h1 class="title">{{ .Title }}</h1>
                     <h4>{{ .Params.description }}</h4>
                 </div>
                 <div class="meta">
@@ -18,6 +20,8 @@
                     </p>
                 </div>
             </article>
+        </div>
+        <div class="columns">
             {{ block "modularContent" . }}{{ end }}
         </div>
 </section>

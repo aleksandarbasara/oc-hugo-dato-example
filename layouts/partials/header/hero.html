@@ -1,8 +1,8 @@
 {{ define "hero" }}
 	{{if not .IsHome }} <!-- if Post -->
-        <section class="hero-image">
+        <div class="section">
             <div class="container">
-                <div class="hero-image-inside">
+                <div class="column">
                     {{ if .Params.heroVideo }}
                     {{ block "youtube" . }}
                     {{ end }}
@@ -10,12 +10,11 @@
                     {{ else }}
                         <img src="{{ .Params.heroimage }}" alt="{{ .Title }}"/>
                     {{ end }}
-                    
                 </div>
             </div>
-        </section>
+        </div>
 	{{ else }}
-        <div class="section">
+        <section class="section">
             {{ range first 1 (where .Pages "Section" "post") }}
             {{ if eq .Params.featured true }}
                 <div class="container">
@@ -25,8 +24,8 @@
                                 <img src="{{ .Params.heroimage }}" alt="Der eine setzt Trends in der Modefotografie"/>
                             </div>
                             <div class="intro_post__descritpion-text">
-                                <h3 class="h1 color__white">{{ .Title }}</h3>
-                                <p class="color__white">{{ .Params.description }}
+                                <h3 class="title">{{ .Title }}</h3>
+                                <p class="subtitle">{{ .Params.description }}
                                 </p>
                             </div>
                         </a>
@@ -34,6 +33,6 @@
                 </div>
             {{ end }}
             {{ end }}
-        </div>
+        </section>
 	{{ end }}
 {{ end }}

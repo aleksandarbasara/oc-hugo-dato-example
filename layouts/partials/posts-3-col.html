@@ -5,12 +5,12 @@
                 <div class="post-block__image">
                     <img src="{{ .Params.heroimage }} " alt="{{ .Title }}"/>
                 </div>
-                <h5 class="color__{{ .Params.category }}">
+                <h5 class="subtitle color__{{ .Params.category }}">
                     <a href="/categories/{{ .Params.category }}">
                         {{ .Params.categoryData.title }}
                     </a>
                 </h5>
-                <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                <h4 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
             </a>
         </div>
     </div>
