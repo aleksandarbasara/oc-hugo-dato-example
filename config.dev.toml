@@ -49,6 +49,6 @@ categories = ["reise", "featured", "sponsored", "gear"]
 		
 
 # datocms:start
-title = "Crazy About Porsche by rampstyle"
-languageCode = "de"
+title = "Hugo DatoCMS Example "
+languageCode = "en"
 # datocms:end
