@@ -1,0 +1,10 @@
+{{ define "mc-images3col"}}
+    <div class="row row-wrap mc-gallery-block">
+        {{ range .image }}
+        <div class="column column-33">
+            <img src="{{ .url }}" alt="" title="" />
+            <span class="image-text"></span>
+        </div>
+        {{ end }}
+    </div>
+{{ end }}

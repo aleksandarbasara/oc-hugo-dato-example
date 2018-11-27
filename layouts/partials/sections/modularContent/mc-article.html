@@ -1,0 +1,22 @@
+{{ define "modularContent"}}
+    <article class="post-content">
+        {{ range .Params.content }}
+            {{ if eq .itemType "gallery2col" }}
+                {{ block "mc-gallery2col" . }}{{ end }}
+            {{ else if eq .itemType "image" }}
+                {{ block "mc-image" .}}{{ end }}
+            {{ else if eq .itemType "imagefullwidth" }}
+                {{ block "mc-imagefullwidth" . }}{{ end }}
+            {{ else if eq .itemType "images2col" }}
+                {{ block "mc-images2col" . }}{{ end }}
+            {{ else if eq .itemType "images3col" }}
+                {{ block "mc-images3col" . }}{{ end }}
+            {{ else if eq .itemType "textblock" }}
+                {{ block "mc-textblock" . }}{{ end }}
+            {{ else if eq .itemType "quoteblock" }}
+                {{ block "mc-quoteblock" . }}{{ end }}
+
+            {{ end }}
+        {{ end }}
+    </article>
+{{ end }}

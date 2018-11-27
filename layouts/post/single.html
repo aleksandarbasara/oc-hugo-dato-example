@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+{{ block "hero" . }}{{ end }}
+
+<section class="single-post mt__2">
+    <div class="container">
+        <div class="row row-wrap">
+            {{ block "sharingIcons" . }}{{ end }}
+            <article class="column column-60">
+                <div class="post-title">
+                    <h1 class="h2">{{ .Title }}</h1>
+                    <h4>{{ .Params.description }}</h4>
+                </div>
+                <div class="meta">
+                    <p><!-- Post Credit Section -->
+                    {{ block "credits" . }}{{ end }}
+                    {{ block "readingTime" . }}{{ end }}
+                    </p>
+                </div>
+            </article>
+            {{ block "modularContent" . }}{{ end }}
+        </div>
+</section>
+{{ block "postNavigation" . }}{{ end }}
+{{ block "comments" . }}{{ end }}
+
+{{ end }}

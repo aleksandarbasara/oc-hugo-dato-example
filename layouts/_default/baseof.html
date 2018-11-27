@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="<%= settings.language %>">
+
+<head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="{{ range .Params.credits }}{{ if eq .itemType "author" }}{{ .name }}{{ end }}{{ end }}">
+    <link rel="stylesheet" href="/static/all.css">
+    <title>{{ .Title }}</title>
+    {{ .Site.Data.settings.faviconMetaTags | safeHTML }}
+    {{ if isset .Params "seometatags" }}
+    {{ .Params.seometatags | safeHTML }}
+    {{ else }}
+    {{ .Site.Data.settings.seoMetaTags | safeHTML }}
+    {{ end }}
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="72e59a17-3c00-48fe-959a-95077dea0754" type="text/javascript" async></script>
+</head>
+<body>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f8e789d6893769e"></script>
+  <div class="">
+    <header>
+      {{ partialCached "header/topbar.html" . }}
+      {{ partialCached "header/mainmenu.html" . }}
+    </header>
+    {{ block "main" . }}
+    <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+    <script id="CookieDeclaration" src="https://consent.cookiebot.com/72e59a17-3c00-48fe-959a-95077dea0754/cd.js" type="text/javascript" async></script>
+  </div>
+  {{ partialCached "footer.html" . }}
+  <script src="/static/all.js"></script>
+  {{ if eq .Site.Params.env "development" }}
+  <script src="http://localhost:5678/livereload.js"></script>
+  {{ end }}
+</body>
+
+</html>

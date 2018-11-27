@@ -1,0 +1,6 @@
+{{ define "mc-image"}}
+    <div class="column column-60 column-offset-20">
+        <img src="{{ .image.url }}" alt="{{ .author }}" class="mc-image-block">
+        <span class="image-text">{{ .credit }}</span>
+    </div>
+{{ end }}

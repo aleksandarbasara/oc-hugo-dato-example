@@ -1,0 +1,20 @@
+<footer>
+    <div class="container">
+        <ul class="social-icons align__center">
+            {{ range .Site.Data.settings.socialProfiles }}
+                <li>
+                    <a href="{{ .url }}" class="color__white social--{{ .type }}">
+                        <i class="fa fa-{{ .type }} "></i>
+                    </a>
+                </li>
+                
+            {{ end }}
+        </ul>
+        <ul class="footer-nav align__center">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.footer }}
+                <li title="{{ .Name }}"><a href="{{.URL}}" class="color__white">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+</footer>

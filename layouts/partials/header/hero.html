@@ -1,0 +1,39 @@
+{{ define "hero" }}
+	{{if not .IsHome }} <!-- if Post -->
+        <section class="hero-image">
+            <div class="container">
+                <div class="hero-image-inside">
+                    {{ if .Params.heroVideo }}
+                    {{ block "youtube" . }}
+                    {{ end }}
+                        {{ partial "widgets/youtube.html" . }}
+                    {{ else }}
+                        <img src="{{ .Params.heroimage }}" alt="{{ .Title }}"/>
+                    {{ end }}
+                    
+                </div>
+            </div>
+        </section>
+	{{ else }}
+        <div class="section">
+            {{ range first 1 (where .Pages "Section" "post") }}
+            {{ if eq .Params.featured true }}
+                <div class="container">
+                    <div class="intro_post">
+                        <a href="{{ .Permalink }}">
+                            <div class="intro_post__image">
+                                <img src="{{ .Params.heroimage }}" alt="Der eine setzt Trends in der Modefotografie"/>
+                            </div>
+                            <div class="intro_post__descritpion-text">
+                                <h3 class="h1 color__white">{{ .Title }}</h3>
+                                <p class="color__white">{{ .Params.description }}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {{ end }}
+            {{ end }}
+        </div>
+	{{ end }}
+{{ end }}

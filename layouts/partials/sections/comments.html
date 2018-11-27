@@ -1,0 +1,15 @@
+{{ define "comments"}}
+    <section class="comments-block mt__2 mb__3">
+        <div class="container">
+            <div class="row">
+                <div class="column column-60 column-offset-20 align__center">
+                    <h2 class="h1">Thoughts</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="comments-wraper">
+                        {{ partial "widgets/disqus.html" }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{{ end }}

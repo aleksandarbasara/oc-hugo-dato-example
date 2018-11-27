@@ -1,0 +1,49 @@
+baseurl = "/"
+Paginate = 5
+
+[params]
+	env = "development"
+  logo = "img/CAP.png"
+	logorampspace = "img/ramp-space.png"
+	logoramp = "img/ramp.png"
+	logorampdesign = "img/rampdesign.png"
+	logorampstyle = "img/rampstyle.png"
+
+# Site Menus
+[menu]
+	# Main Menu
+	[[menu.main]]
+			name    = "Artikel"
+			url     = "/articles/"
+			weight  = 2
+
+	[[menu.main]]
+			name    = "Videos"
+			url     = "/videos/"
+			weight  = 3
+
+	# Footer Menu
+	[[menu.footer]]
+			name    = "Impressum"
+			url     = "/imprint/"
+			weight  = 1
+
+	[[menu.footer]]
+			name    = "Datenschutz"
+			url     = "/privacypolicy/"
+			weight  = 2
+
+	[[menu.footer]]
+			name    = "Mediendaten"
+			url     = "/mediadata/"
+			weight  = 3
+
+	[[menu.footer]]
+			name    = "Kontakt"
+			url     = "/contact/"
+			weight  = 4
+
+# datocms:start
+title = "Crazy About Porsche by rampstyle"
+languageCode = "de"
+# datocms:end

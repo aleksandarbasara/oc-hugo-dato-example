@@ -1,0 +1,17 @@
+{{ define "posts-3-col" }}
+    <div class="column column-33">
+        <div class="post-block">
+            <a href="{{ .Permalink }}">
+                <div class="post-block__image">
+                    <img src="{{ .Params.heroimage }} " alt="{{ .Title }}"/>
+                </div>
+                <h5 class="color__{{ .Params.category }}">
+                    <a href="/categories/{{ .Params.category }}">
+                        {{ .Params.categoryData.title }}
+                    </a>
+                </h5>
+                <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+            </a>
+        </div>
+    </div>
+{{ end }}

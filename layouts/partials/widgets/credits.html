@@ -1,0 +1,13 @@
+{{ define "credits" }}
+	{{ range .Params.credits }}
+		{{ if eq .itemType "author" }}
+		<span class="author-block">
+			Text: <a href="{{ .url }}">{{ .name }}</a>
+		</span>
+		{{ else if eq .itemType "photographer"}}
+		<span class="photographer-block">
+			Photo: <a href="{{ .url }}">{{ .name }}</a>
+		</span>
+		{{ end }}
+	{{ end }}
+{{ end }}
