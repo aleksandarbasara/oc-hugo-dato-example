@@ -16,6 +16,7 @@
     "prettier": "prettier --write assets/js/**/*.js *.js"
   },
   "dependencies": {
+    "atomic-algolia": "^0.3.15",
     "bulma": "^0.7.2",
     "bulma-accordion": "^2.0.0",
     "clean-webpack-plugin": "^0.1.19",

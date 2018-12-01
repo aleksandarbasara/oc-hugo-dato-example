@@ -2,22 +2,25 @@
     <section class="section">
         {{ partial "header/hero.html" . }}
         <div class="container">
-            <article>
-                <div class="post-title">
-                    <h1 class="title">{{ .Title }}</h1>
-                    <h4>{{ .Params.description }}</h4>
-                </div>
-                <div class="meta">
-                    <p><!-- Post Credit Section -->
-                    {{ partial "widgets/credits.html" . }}
-                    {{ partial "widgets/readingtime.html" . }}
-                    </p>
-                </div>
-            </article>
-            <div class="columns">
-                {{ partial "modular-content/mc-article.html" . }}
+            <div class="column is-half is-offset-one-quarter">
+                <article>
+                    <div class="post-title">
+                        <h1 class="title">{{ .Title }}</h1>
+                        <h4 class="subtitle">{{ .Params.description }}</h4>
+                    </div>
+                    <div class="meta">
+                        <p><!-- Post Credit Section -->
+                        {{ partial "widgets/credits.html" . }}
+                        {{ partial "widgets/readingtime.html" . }}
+                        </p>
+                    </div>
+                    <div class="columns">
+                        {{ partial "modular-content/mc-article.html" . }}
+                    </div>
+                    {{ partial "widgets/post-navigation.html" . }}
+                </article>
             </div>
-            {{ partial "widgets/post-navigation.html" . }}
             {{ partial "widgets/comments.html" . }}
+        </div>
     </section>
 {{ end }}
