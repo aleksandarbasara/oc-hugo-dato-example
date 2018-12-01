@@ -1,28 +1,12 @@
-<section class="pagination-block mt__3">
-    <div class="container">
-        <div class="row">
-            <div class="column column-60 column-offset-20">
-                <div class="pagination mb__4">
-                    <div class="row">
-                        <div class="column column-50 align__left">
-                            {{ with .PrevInSection }}
-                                <a href="{{ .Permalink }}" class="button button next-page">
-                                    <i class="fa fa-angle-left"></i>
-                                    Prev Post
-                                </a>
-                            {{ end }}
-                        </div>
-                        <div class="column column-50 align__right">
-                            {{ with .NextInSection }}
-                                <a href="{{ .Permalink }}" class="button button next-page">
-                                    Next Post
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            {{ end }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="buttons mt__5">
+    {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}" class="button is-pulled-left">
+            Prev Post
+        </a>
+    {{ end }}
+    {{ with .NextInSection }}
+        <a href="{{ .Permalink }}" class="button is-pulled-right">
+            Next Post
+        </a>
+    {{ end }}
+</div>

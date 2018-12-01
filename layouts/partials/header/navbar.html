@@ -1,7 +1,7 @@
 <nav class="navbar is-fixed-top has-shadow is-spaced" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="{{ .Site.BaseURL }}">
                 <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
             </a>
 
@@ -13,7 +13,7 @@
         </div>
         <div id="oc-navbar" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
+                <a class="navbar-item" href="{{ .Site.BaseURL }}">
                     Home
                 </a>
                 {{ $currentPage := . }}

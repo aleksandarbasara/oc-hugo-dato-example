@@ -1,11 +1,8 @@
 {{ define "main" }}
-
-
-<section class="section mt__5">
-    {{ partial "header/hero.html" . }}
-    <div class="container">
-        <div class="columns">
-            <article class="column is-11">
+    <section class="section">
+        {{ partial "header/hero.html" . }}
+        <div class="container">
+            <article>
                 <div class="post-title">
                     <h1 class="title">{{ .Title }}</h1>
                     <h4>{{ .Params.description }}</h4>
@@ -17,12 +14,10 @@
                     </p>
                 </div>
             </article>
-        </div>
-        <div class="columns">
-            {{ partial "modular-content/mc-article.html" . }}
-        </div>
-</section>
-{{ partial "widgets/post-navigation.html" . }}
-{{ partial "widgets/comments.html" . }}
-
+            <div class="columns">
+                {{ partial "modular-content/mc-article.html" . }}
+            </div>
+            {{ partial "widgets/post-navigation.html" . }}
+            {{ partial "widgets/comments.html" . }}
+    </section>
 {{ end }}

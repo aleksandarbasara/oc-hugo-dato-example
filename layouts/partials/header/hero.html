@@ -1,38 +1,40 @@
 {{if not .IsHome }}
-    <div class="section">
-        <div class="container">
-            <div class="column">
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
                 {{ if .Params.heroVideo }}
                 {{ block "youtube" . }}
                 {{ end }}
-                    {{ partial "widgets/youtube.html" . }}
+                {{ partial "widgets/youtube.html" . }}
                 {{ else }}
-                    <figure class="image image is-16by9">
-                        <img src="{{ .Params.heroimage }}" alt="{{ .Title }}"/>
-                    </figure>
+                <figure class="image image is-16by9">
+                    <img src="{{ .Params.heroimage }}" alt="{{ .Title }}"/>
+                </figure>
                 {{ end }}
             </div>
         </div>
-    </div>
+    </section>
 {{ else }}
-    <section class="section">
-        {{ range first 1 (where .Pages "Section" "post") }}
-        {{ if eq .Params.featured true }}
-            <div class="container">
-                <div class="intro_post">
-                    <a href="{{ .Permalink }}">
-                        <figure class="image image is-16by9 intro_post__image">
-                            <img src="{{ .Params.heroimage }}" alt="Der eine setzt Trends in der Modefotografie"/>
-                        </figure>
-                        <div class="intro_post__descritpion-text">
-                            <h3 class="title">{{ .Title }}</h3>
-                            <p class="subtitle">{{ .Params.description }}
-                            </p>
+    <section class="hero">
+        <div class="hero-body">
+            {{ range first 1 (where .Pages "Section" "post") }}
+                {{ if eq .Params.featured true }}
+                    <div class="container">
+                        <div class="intro_post">
+                            <a href="{{ .Permalink }}">
+                                <figure class="image image is-16by9 intro_post__image">
+                                    <img src="{{ .Params.heroimage }}" alt="Der eine setzt Trends in der Modefotografie"/>
+                                </figure>
+                                <div class="intro_post__descritpion-text">
+                                    <h3 class="title">{{ .Title }}</h3>
+                                    <p class="subtitle">{{ .Params.description }}
+                                    </p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-            </div>
-        {{ end }}
-        {{ end }}
+                    </div>
+                {{ end }}
+            {{ end }}
+        </div>
     </section>
 {{ end }}

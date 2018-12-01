@@ -1,4 +1,4 @@
-# Hugo Portfolio Website
+# Hugo DatoCMS Starter
 
 This repo contains a working static website written with [Hugo](http://gohugo.io/), integrated with content coming from this [DatoCMS administrative area](https://dashboard.datocms.com/account/sites/template?name=Portfolio&siteId=604).
 
