@@ -1,13 +1,10 @@
 {{ define "main" }}
 
-{{ block "hero" . }}{{ end }}
 
-<section>
+<section class="section mt__5">
+    {{ partial "header/hero.html" . }}
     <div class="container">
         <div class="columns">
-            <div class="column is-1">
-                {{ block "sharingIcons" . }}{{ end }}
-            </div>
             <article class="column is-11">
                 <div class="post-title">
                     <h1 class="title">{{ .Title }}</h1>
@@ -15,17 +12,17 @@
                 </div>
                 <div class="meta">
                     <p><!-- Post Credit Section -->
-                    {{ block "credits" . }}{{ end }}
-                    {{ block "readingTime" . }}{{ end }}
+                    {{ partial "widgets/credits.html" . }}
+                    {{ partial "widgets/readingtime.html" . }}
                     </p>
                 </div>
             </article>
         </div>
         <div class="columns">
-            {{ block "modularContent" . }}{{ end }}
+            {{ partial "modular-content/mc-article.html" . }}
         </div>
 </section>
-{{ block "postNavigation" . }}{{ end }}
-{{ block "comments" . }}{{ end }}
+{{ partial "widgets/post-navigation.html" . }}
+{{ partial "widgets/comments.html" . }}
 
 {{ end }}

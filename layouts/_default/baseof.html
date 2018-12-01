@@ -10,18 +10,21 @@
     <title>{{ .Title }}</title>
     {{ .Site.Data.settings.faviconMetaTags | safeHTML }}
     {{ if isset .Params "seometatags" }}
-    {{ .Params.seometatags | safeHTML }}
+        {{ .Params.seometatags | safeHTML }}
     {{ else }}
-    {{ .Site.Data.settings.seoMetaTags | safeHTML }}
+        {{ .Site.Data.settings.seoMetaTags | safeHTML }}
     {{ end }}
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 
 <body>
+    <a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 9999;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f8e789d6893769e"></script>
   <div class="wrapper">
     <header>
-      {{ partialCached "header/topbar.html" . }}
-      {{ block "navbar" . }}{{ end }}
+      {{ partialCached "header/navbar.html" . }}
     </header>
     {{ block "main" . }}
     <!-- The part of the page that begins to differ between templates -->
@@ -30,7 +33,7 @@
   {{ partialCached "footer.html" . }}
   <script src="/static/all.js"></script>
   {{ if eq .Site.Params.env "development" }}
-  <script src="http://localhost:5678/livereload.js"></script>
+    <script src="http://localhost:5678/livereload.js"></script>
   {{ end }}
 </body>
 

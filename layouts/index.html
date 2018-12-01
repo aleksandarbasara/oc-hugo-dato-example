@@ -1,14 +1,12 @@
 {{ define "main" }}
 
-{{ block "hero" . }}{{ end }}
-{{ block "posts" . }}{{ end }}
+{{ partial "header/hero.html" . }}
+{{ partial "sections/posts.html" . }}
 
-<section class="mt__5">
+<section class="section">
     <div class="container">
         <div class="pagination mb__4">
             <div class="columns">
-                <div class="columns is-4 align__left">
-                </div>
                 <div class="is-4 align__right">
                     <a class="button next-page" href="/articles">
                         <span>More Posts</span>

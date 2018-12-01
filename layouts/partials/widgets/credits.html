@@ -1,9 +1,7 @@
-{{ define "credits" }}
-	{{ range .Params.credits }}
-		{{ if eq .itemType "author" }}
-            <span class="author-block">
-                Text: <a href="https://twitter.com/{{ .twittername }}">{{ .twittername }}</a>
-            </span>
-		{{ end }}
-	{{ end }}
+{{ range .Params.credits }}
+    {{ if eq .itemType "author" }}
+        <span class="author-block">
+            Text: <a href="https://twitter.com/{{ .twittername }}">{{ .twittername }}</a>
+        </span>
+    {{ end }}
 {{ end }}

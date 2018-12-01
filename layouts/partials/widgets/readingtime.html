@@ -1,16 +1,14 @@
-{{ define "readingTime" }}
-    <span>{{ dateFormat "2 Jan, 2006" .Params.publishedDate }}</span>
-    <span>
-        {{ .Scratch.Set "wordcount" 0 }}
-        {{ range .Params.content }}
-            {{ if eq .itemType "textblock" }}
-                {{ $.Scratch.Add "wordcount" (countwords .text) }}
-            {{ end }}
+<span>{{ dateFormat "2 Jan, 2006" .Params.publishedDate }}</span>
+<span>
+    {{ .Scratch.Set "wordcount" 0 }}
+    {{ range .Params.content }}
+        {{ if eq .itemType "textblock" }}
+            {{ $.Scratch.Add "wordcount" (countwords .text) }}
         {{ end }}
-        {{ $readTime := mul (div (.Scratch.Get "wordcount") 220.0) 60 }}
+    {{ end }}
+    {{ $readTime := mul (div (.Scratch.Get "wordcount") 220.0) 60 }}
 
-        {{ $minutes := math.Round (div $readTime 60) }}
+    {{ $minutes := math.Round (div $readTime 60) }}
 
-        {{ $minutes }} min read
-    </span>
-{{ end }}
+    {{ $minutes }} min read
+</span>

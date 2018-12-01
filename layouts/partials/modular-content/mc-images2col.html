@@ -1,0 +1,8 @@
+<div>
+    {{ range .images }}
+    <div class="column is-half">
+        <img src="{{ .url }}" alt="" title="" />
+        <span class="image-text">{{ .credit }}</span>
+    </div>
+    {{ end }}
+</div>

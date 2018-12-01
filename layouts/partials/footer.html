@@ -1,19 +1,20 @@
-<footer>
-    <div class="container">
+<footer class="footer">
+    <div class="content has-text-centered">
+        <a href="https://bulma.io">
+            <img src="https://bulma.io/images/made-with-bulma--semiblack.png" alt="Made with Bulma" width="128" height="24">
+        </a>
+        <p>
+            <strong>Hugo-DatoCMS-Bulma</strong> by <a href="https://aleksbasara.co">Aleksandar Basara</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
         <ul class="social-icons align__center">
             {{ range .Site.Data.settings.socialProfiles }}
-                <li>
-                    <a href="{{ .url }}" class="color__white social--{{ .type }}">
-                        <i class="fa fa-{{ .type }} "></i>
-                    </a>
-                </li>
-                
-            {{ end }}
-        </ul>
-        <ul class="footer-nav align__center">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.footer }}
-                <li title="{{ .Name }}"><a href="{{.URL}}" class="color__white">{{ .Name }}</a></li>
+            <li>
+                <a href="{{ .url }}" class="color__white social--{{ .type }}">
+                    <i class="fa fa-{{ .type }} "></i>
+                </a>
+            </li>
             {{ end }}
         </ul>
     </div>

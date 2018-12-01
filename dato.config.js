@@ -140,6 +140,7 @@ module.exports = (dato, root, i18n) => {
                     featured: post.featured,
                     content: post.content.toMap(),
                     category: post.category.slug,
+                    weight: index,
                     categoryData: {
                         title: post.category.name,
                         slug: post.category.slug,

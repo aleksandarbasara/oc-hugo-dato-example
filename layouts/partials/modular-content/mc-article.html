@@ -1,0 +1,19 @@
+<article class="post-content">
+    {{ range .Params.content }}
+        {{ if eq .itemType "gallery2col" }}
+            {{ partial "modular-content/mc-gallery2col.html" . }}
+        {{ else if eq .itemType "image" }}
+            {{ partial "modular-content/mc-image.html" .}}
+        {{ else if eq .itemType "imagefullwidth" }}
+            {{ partial "modular-content/mc-imagefullwidth.html" . }}
+        {{ else if eq .itemType "images2col" }}
+            {{ partial "modular-content/mc-images2col.html" . }}
+        {{ else if eq .itemType "images3col" }}
+            {{ partial "modular-content/mc-images3col.html" . }}
+        {{ else if eq .itemType "textblock" }}
+            {{ partial "modular-content/mc-textblock.html" . }}
+        {{ else if eq .itemType "quoteblock" }}
+            {{ partial "modular-content/mc-quoteblock.html" . }}
+        {{ end }}
+    {{ end }}
+</article>

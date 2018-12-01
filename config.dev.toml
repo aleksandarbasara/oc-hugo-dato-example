@@ -1,15 +1,9 @@
 baseurl = "/"
-Paginate = 5
 
 categories = ["reise", "featured", "sponsored", "gear"]
 
 [params]
 	env = "development"
-    logo = "img/CAP.png"
-	logorampspace = "img/ramp-space.png"
-	logoramp = "img/ramp.png"
-	logorampdesign = "img/rampdesign.png"
-	logorampstyle = "img/rampstyle.png"
 
 [taxonomies]
 	category = "categories"
@@ -20,11 +14,7 @@ categories = ["reise", "featured", "sponsored", "gear"]
 		name    = "Artikel"
 		url     = "/articles/"
 		weight  = 2
-	
-	[[menu.main]]
-		name    = "Videos"
-		url     = "/videos/"
-		weight  = 3
+
 
 # Footer Menu
 	[[menu.footer]]

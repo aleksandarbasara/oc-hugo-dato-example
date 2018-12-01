@@ -1,34 +1,32 @@
-{{ define "featured-2-col"}}
-    <div class="columns">
-        {{ range first 2 ( after 1 (where .Pages "Section" "post") ) }}
-            {{ if eq .Params.featured true }}
-                <div class="column is-half">
-                    <div class="featured-post">
-                        <a href="{{ .Permalink }}">
-                            <div class="featured-post__image">
-                                <img src="{{ .Params.heroimage }} " alt="{{ .Title }}" />
-                            </div>
-                            <div class="featured-post__description-text">
-                                <h4 class="title">{{ .Title }}</h4>
-                                <p class="subtitle">Die Rivalität zwischen dem Porsche 917 und dem Ferrari 512. An einem</p>
-                                <div class="post-meta color__white">
-                                    <i class="fa fa-user"></i>
-                                    <span class="mr__1">
-                                        {{ range .Params.credits }}
-                                            {{ if eq .itemType "author" }}
-                                                <!-- <a href="{{ .url }}">{{ .name }}</a>-->
-                                                {{ .name }}
-                                            {{ end }}
+<div class="columns">
+    {{ range first 2 ( after 1 (where .Pages "Section" "post") ) }}
+        {{ if eq .Params.featured true }}
+            <div class="column is-half">
+                <div class="featured-post">
+                    <a href="{{ .Permalink }}">
+                        <div class="featured-post__image">
+                            <img src="{{ .Params.heroimage }} " alt="{{ .Title }}" />
+                        </div>
+                        <div class="featured-post__description-text">
+                            <h4 class="title">{{ .Title }}</h4>
+                            <p class="subtitle">Die Rivalität zwischen dem Porsche 917 und dem Ferrari 512. An einem</p>
+                            <div class="post-meta color__white">
+                                <i class="fa fa-user"></i>
+                                <span class="mr__1">
+                                    {{ range .Params.credits }}
+                                        {{ if eq .itemType "author" }}
+                                            <!-- <a href="{{ .url }}">{{ .name }}</a>-->
+                                            {{ .name }}
                                         {{ end }}
-                                    </span>
-                                    <i class="fa fa-clock"></i>
-                                    <span>{{ dateFormat "2 Jan, 2006" .Params.publishedDate }}</span>
-                                </div>
+                                    {{ end }}
+                                </span>
+                                <i class="fa fa-clock"></i>
+                                <span>{{ dateFormat "2 Jan, 2006" .Params.publishedDate }}</span>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
-            {{ end }}
+            </div>
         {{ end }}
-    </div>
-{{ end }}
+    {{ end }}
+</div>

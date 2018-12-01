@@ -1,26 +1,16 @@
 baseurl = "/"
-Paginate = 5
 
 [params]
-	env = "development"
-  logo = "img/CAP.png"
-	logorampspace = "img/ramp-space.png"
-	logoramp = "img/ramp.png"
-	logorampdesign = "img/rampdesign.png"
-	logorampstyle = "img/rampstyle.png"
+	env = "production"
 
 # Site Menus
 [menu]
 	# Main Menu
 	[[menu.main]]
-			name    = "Artikel"
+			name    = "Articles"
 			url     = "/articles/"
 			weight  = 2
 
-	[[menu.main]]
-			name    = "Videos"
-			url     = "/videos/"
-			weight  = 3
 
 	# Footer Menu
 	[[menu.footer]]

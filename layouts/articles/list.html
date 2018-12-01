@@ -1,24 +1,18 @@
 {{ define "main" }}
-    <section class="moments-section">
+    <section class="section mt__5">
         <div class="container">
-            <div class="row">
-                <div class="column column-50 column-offset-25">
-                    <div class="moments-heding align__center">
-                        <h2 class="h1">{{ .Title }}</h2>
-                        <p>{{ .Content }}</p>
-                    </div>
-                </div>
+            <div class="">
+                <h2 class="title">{{ .Title }}</h2>
+                <p>{{ .Content }}</p>
             </div>
-            <div class="row row-wrap">
-                {{ $paginator := .Paginate (where .Site.Pages "Section" "post") 5 }}
+            <div class="columns">
+                {{ $paginator := .Paginate (where .Site.RegularPages "Section" "post") 5 }}
                 {{ range $paginator.Pages }}
-                    {{ block "posts-3-col" . }}{{ end }}
+                    {{ partial "posts-3-col.html" . }}
                 {{ end }}
             </div>
-            <div class="row row-wrap">
-                <div class="column pagination-column">
-                    {{ template "_internal/pagination.html" . }}
-                </div>
+            <div class="column pagination-column">
+                {{ template "_internal/pagination.html" . }}
             </div>
         </div>
     </section>

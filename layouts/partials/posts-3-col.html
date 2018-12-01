@@ -1,17 +1,14 @@
-{{ define "posts-3-col" }}
-    <div class="column is-4">
-        <div class="post-block">
-            <a href="{{ .Permalink }}">
-                <div class="post-block__image">
-                    <img src="{{ .Params.heroimage }} " alt="{{ .Title }}"/>
-                </div>
-                <h5 class="subtitle color__{{ .Params.category }}">
-                    <a href="/categories/{{ .Params.category }}">
-                        {{ .Params.categoryData.title }}
-                    </a>
-                </h5>
-                <h4 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-            </a>
-        </div>
-    </div>
-{{ end }}
+<div class="column is-4">
+    <a href="{{ .Permalink }}">
+        <figure class="image is-16by9">
+            <img src="{{ .Params.heroimage }} " alt="{{ .Title }}"/>
+        </figure>
+        <a href="/categories/{{ .Params.category }}">
+            <span class="tag is-primary is-uppercase">
+                {{ .Params.categoryData.title }}
+            </span>
+        </a>
+
+        <h4 class="subtitle is-uppercase"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+    </a>
+</div>
