@@ -1,0 +1,11 @@
+{{ define "main" }}
+    <section class="section mt__5">
+        <div class="container">
+            <div class="">
+                <h2 class="title">{{ .Title }}</h2>
+                <p>{{ .Content }}</p>
+            </div>
+            {{ partial "modular-content/mc-faq.html" . }}
+        </div>
+    </section>
+{{ end }}

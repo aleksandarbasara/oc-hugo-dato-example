@@ -1,0 +1,10 @@
+@import "~bulma";
+@import url(https://cdn.jsdelivr.net/npm/bulma-extensions@3.0.0/dist/css/bulma-extensions.min.css);
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+
+@import "variables";
+@import "mixins";
+@import "general";
+@import "posts";
+@import "footer";

@@ -1,0 +1,14 @@
+{{ range .Params.modContent }}
+    <section class="accordions">
+        <article class="accordion">
+            <div class="accordion-header toggle">
+                <p>{{ .title | markdownify }}</p>
+            </div>
+            <div class="accordion-body">
+                <div class="accordion-content">
+                    {{ .text | markdownify }}
+                </div>
+            </div>
+        </article>
+    </section>
+{{ end }}
