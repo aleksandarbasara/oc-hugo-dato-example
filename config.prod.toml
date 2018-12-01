@@ -5,33 +5,37 @@ baseurl = "/"
 
 # Site Menus
 [menu]
-	# Main Menu
 	[[menu.main]]
-			name    = "Articles"
-			url     = "/articles/"
-			weight  = 2
+		name    = "Blog"
+		url     = "/blog/"
+		weight  = 2
+
+    [[menu.main]]
+        name    = "FAQ"
+        url     = "/faq/"
+        weight  = 3
 
 
-	# Footer Menu
+# Footer Menu
 	[[menu.footer]]
-			name    = "Impressum"
-			url     = "/imprint/"
-			weight  = 1
-
-	[[menu.footer]]
-			name    = "Datenschutz"
-			url     = "/privacypolicy/"
-			weight  = 2
-
-	[[menu.footer]]
-			name    = "Mediendaten"
-			url     = "/mediadata/"
-			weight  = 3
+		name    = "Impressum"
+		url     = "/imprint/"
+		weight  = 1
 
 	[[menu.footer]]
-			name    = "Kontakt"
-			url     = "/contact/"
-			weight  = 4
+		name    = "Datenschutz"
+		url     = "/privacypolicy/"
+		weight  = 2
+
+	[[menu.footer]]
+		name    = "Mediendaten"
+		url     = "/mediadata/"
+		weight  = 3
+
+	[[menu.footer]]
+		name    = "Kontakt"
+		url     = "/contact/"
+		weight  = 4
 
 # datocms:start
 title = "Hugo DatoCMS Example "

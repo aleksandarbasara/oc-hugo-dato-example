@@ -11,14 +11,14 @@ categories = ["reise", "featured", "sponsored", "gear"]
 # Site Menus
 [menu]
 	[[menu.main]]
-		name    = "Artikel"
-		url     = "/articles/"
+		name    = "Blog"
+		url     = "/blog/"
 		weight  = 2
 
     [[menu.main]]
-            name    = "FAQ"
-            url     = "/faq/"
-            weight  = 3
+        name    = "FAQ"
+        url     = "/faq/"
+        weight  = 3
 
 
 # Footer Menu

@@ -9,9 +9,14 @@
             is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
         </p>
         <ul class="social-icons align__center">
+            <li>
+                <a href="https://github.com/aleksandarbasara" target="_blank">
+                    <i class="fa fa-github "></i>
+                </a>
+            </li>
             {{ range .Site.Data.settings.socialProfiles }}
             <li>
-                <a href="{{ .url }}" class="color__white social--{{ .type }}">
+                <a href="{{ .url }}">
                     <i class="fa fa-{{ .type }} "></i>
                 </a>
             </li>

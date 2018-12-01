@@ -92,13 +92,13 @@ module.exports = (dato, root, i18n) => {
         content: dato.privacypolicyPage.text,
     });
 
-    root.createPost(`content/articles/_index.md`, 'yaml', {
+    root.createPost(`content/blog/_index.md`, 'yaml', {
         frontmatter: {
-            title: dato.articlePage.title,
-            seoMetaTags: toHtml(dato.articlePage.seoMetaTags),
-            type: 'article',
+            title: dato.blogPage.title,
+            seoMetaTags: toHtml(dato.blogPage.seoMetaTags),
+            type: 'blog',
         },
-        content: dato.articlePage.text,
+        content: dato.blogPage.text,
     });
 
     root.createPost(`content/faq/_index.md`, 'yaml', {

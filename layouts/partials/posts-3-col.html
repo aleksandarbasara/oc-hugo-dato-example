@@ -1,14 +1,36 @@
 <div class="column is-4">
-    <a href="{{ .Permalink }}">
-        <figure class="image is-16by9">
-            <img src="{{ .Params.heroimage }} " alt="{{ .Title }}"/>
-        </figure>
-        <a href="/categories/{{ .Params.category }}">
-            <span class="tag is-primary is-uppercase">
-                {{ .Params.categoryData.title }}
-            </span>
-        </a>
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <a href="{{ .Permalink }}">
+                    <img src="{{ .Params.heroimage }}" alt="Placeholder image">
+                </a>
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p class="title is-size-5">
+                        <a href="{{ .Permalink }}">
+                            {{ .Title }}
+                        </a>
+                    </p>
+                    <a href="/categories/{{ .Params.category }}">
+                        <span class="tag is-primary is-uppercase">
+                            {{ .Params.categoryData.title }}
+                        </span>
+                    </a>
+                </div>
+            </div>
 
-        <h4 class="subtitle is-uppercase"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-    </a>
+            <div class="content">
+                <p>
+                    {{ .Params.description }}
+                </p>
+                <time>{{ dateFormat "2 Jan, 2006" .Params.publishedDate }}</time>
+            </div>
+            <a href="{{ .Permalink }}" class="button is-outlined is-primary">Read More</a>
+        </div>
+    </div>
 </div>
+
