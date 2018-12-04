@@ -4,9 +4,9 @@
         <h2 class="title">{{ .Title }}</h2>
         <hr class="has-shadow"/>
         <div class="columns">
-            {{ $paginator := .Paginate (where (where .Site.Pages "Section" "=" "post") ".Params.category" "=" .Params.slug ) 5 }}
+            {{ $paginator := .Paginate (where (where .Site.RegularPages "Section" "=" "post") ".Params.category" "=" .Params.slug ) 5 }}
             {{ range $paginator.Pages }}
-                {{ partial "posts-3-col.html" .}}
+            {{ partial "posts-3-col.html" .}}
             {{ end }}
         </div>
         <div class="column pagination-column">
