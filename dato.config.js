@@ -101,15 +101,6 @@ module.exports = (dato, root, i18n) => {
         content: dato.blogPage.text,
     });
 
-    root.createPost(`content/faq/_index.md`, 'yaml', {
-        frontmatter: {
-            title: dato.faq.title,
-            modContent: dato.faq.content.toMap(),
-            seoMetaTags: toHtml(dato.faq.seoMetaTags),
-        },
-        content: dato.faq.description,
-    });
-
     // Create a `category` directory
     root.directory('content/categories', (categoriesDir) => {
         // ...and for each of the category stored online...

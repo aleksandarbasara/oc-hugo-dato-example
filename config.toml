@@ -10,11 +10,6 @@ baseurl = "/"
 		url     = "/blog/"
 		weight  = 2
 
-    [[menu.main]]
-        name    = "FAQ"
-        url     = "/faq/"
-        weight  = 3
-
 
 # Footer Menu
 	[[menu.footer]]
