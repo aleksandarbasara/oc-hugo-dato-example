@@ -1,47 +1,5 @@
-baseurl = "/"
-
-categories = ["reise", "featured", "sponsored", "gear"]
-
 [params]
 	env = "development"
-
-[taxonomies]
-	category = "categories"
-
-# Site Menus
-[menu]
-	[[menu.main]]
-		name    = "Blog"
-		url     = "/blog/"
-		weight  = 2
-
-    [[menu.main]]
-        name    = "FAQ"
-        url     = "/faq/"
-        weight  = 3
-
-
-# Footer Menu
-	[[menu.footer]]
-		name    = "Impressum"
-		url     = "/imprint/"
-		weight  = 1
-
-	[[menu.footer]]
-		name    = "Datenschutz"
-		url     = "/privacypolicy/"
-		weight  = 2
-
-	[[menu.footer]]
-		name    = "Mediendaten"
-		url     = "/mediadata/"
-		weight  = 3
-
-	[[menu.footer]]
-		name    = "Kontakt"
-		url     = "/contact/"
-		weight  = 4
-		
 
 # datocms:start
 title = "Hugo DatoCMS Example "
