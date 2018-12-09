@@ -1,0 +1,36 @@
+<div class="column is-4">
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <a href="{{ .Permalink }}">
+                    <img src="{{ .Params.heroimage }}" alt="Placeholder image">
+                </a>
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p class="title is-size-5">
+                        <a href="{{ .Permalink }}">
+                            {{ .Title }}
+                        </a>
+                    </p>
+                    <a href="/categories/{{ .Params.category }}">
+                        <span class="tag is-primary is-uppercase">
+                            {{ .Params.categoryData.title }}
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="content">
+                <p>
+                    {{ .Params.description }}
+                </p>
+                <date>{{ dateFormat "2 Jan, 2006" .Params.publishedDate }}</date>
+            </div>
+            <a href="{{ .Permalink }}" class="button is-outlined is-primary">Read More</a>
+        </div>
+    </div>
+</div>
+

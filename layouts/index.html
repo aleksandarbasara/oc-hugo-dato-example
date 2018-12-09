@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+{{ partial "header/hero.html" . }}
+{{ partial "sections/index-posts.html" . }}
+
+<section class="section">
+    <div class="container">
+        <div class="pagination mb__4">
+            <div class="is-4 align__right">
+                <a class="button next-page" href="/blog">
+                    <span>More Articles</span>
+                    <span class="icon is-small">
+                      <i class="fa fa-arrow-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+

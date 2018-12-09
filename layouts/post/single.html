@@ -1,0 +1,26 @@
+{{ define "main" }}
+    <section class="section">
+        {{ partial "header/hero.html" . }}
+        <div class="container">
+            <div class="">
+                <article>
+                    <div class="post-title column is-8 is-offset-2">
+                        <h1 class="title">{{ .Title }}</h1>
+                        <h4 class="subtitle">{{ .Params.description }}</h4>
+                    </div>
+                    <div class="meta column is-8 is-offset-2">
+                        <p><!-- Post Credit Section -->
+                        {{ partial "widgets/credits.html" . }} -
+                        {{ partial "widgets/readingtime.html" . }}
+                        </p>
+                    </div>
+                    <div class="columns">
+                        {{ partial "modular-content/mc-article.html" . }}
+                    </div>
+                    {{ partial "widgets/post-navigation.html" . }}
+                </article>
+            </div>
+            {{ partial "widgets/comments.html" . }}
+        </div>
+    </section>
+{{ end }}

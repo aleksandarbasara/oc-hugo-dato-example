@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="<%= settings.language %>">
+
+<head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="{{ range .Params.credits }}{{ if eq .itemType "author" }}{{ .name }}{{ end }}{{ end }}">
+    <link rel="stylesheet" href="/assets/all.css">
+    <title>{{ .Title }}</title>
+    {{ .Site.Data.settings.faviconMetaTags | safeHTML }}
+    {{ if isset .Params "seometatags" }}
+        {{ .Params.seometatags | safeHTML }}
+    {{ else }}
+        {{ .Site.Data.settings.seoMetaTags | safeHTML }}
+    {{ end }}
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+    <a href="https://github.com/aleksandarbasara/oc-hugo-dato-example"><img style="position: absolute; top: 0; left: 0; border: 0; z-index: 9999;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f8e789d6893769e"></script>
+      {{ partialCached "header/navbar.html" . }}
+  <div class="container">
+      <div class="notification is-danger">
+          This is a Demo!
+      </div>
+  </div>
+    {{ block "main" . }}
+    <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+  {{ partialCached "footer.html" . }}
+  <script src="/assets/all.js"></script>
+  {{ if eq .Site.Params.env "development" }}
+    <script src="http://localhost:5678/livereload.js"></script>
+  {{ end }}
+</body>
+
+</html>

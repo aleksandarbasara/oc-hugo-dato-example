@@ -1,0 +1,33 @@
+baseurl = "/"
+
+[params]
+	env = "production"
+
+# Site Menus
+[menu]
+	[[menu.main]]
+		name    = "Blog"
+		url     = "/blog/"
+		weight  = 2
+
+
+# Footer Menu
+	[[menu.footer]]
+		name    = "Page 1"
+		url     = "/"
+		weight  = 1
+
+	[[menu.footer]]
+		name    = "Page 2"
+		url     = "/"
+		weight  = 2
+
+	[[menu.footer]]
+		name    = "Page 3"
+		url     = "/"
+		weight  = 3
+
+# datocms:start
+title = "Hugo DatoCMS Example "
+languageCode = "en"
+# datocms:end

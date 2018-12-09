@@ -1,0 +1,80 @@
+{
+  "name": "oc-hugo-dato",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:hugo": "NODE_ENV=production hugo -v",
+    "build:assets": "NODE_ENV=production webpack -p --config webpack.prod.config.js",
+    "build:datocms": "dato dump",
+    "build": "npm run build:datocms && npm run build:hugo && npm run build:assets",
+    "start:assets": "NODE_ENV=development webpack-dev-server --open --content-base public/ --config webpack.dev.config.js",
+    "start:hugo": "hugo -w --config config.dev.toml,config.toml",
+    "start:livereload": "livereload public -e 'html' -p 5678",
+    "start:datocms": "dato dump --watch",
+    "start": "dato check && concurrently -p \"[{name}]\" -c \"blue,red,green,yellow\" -k -n hugo,webpack,livereload,dato \"npm run start:hugo\" \"npm run start:assets\" \"npm run start:livereload\" \"npm run start:datocms\"",
+    "prettier": "prettier --write assets/js/**/*.js *.js"
+  },
+  "dependencies": {
+    "atomic-algolia": "^0.3.15",
+    "bulma": "^0.7.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "font-awesome": "^4.7.0",
+    "husky": "^1.2.0",
+    "imagesloaded": "^4.1.4",
+    "lint-staged": "^8.1.0",
+    "livereload": "^0.7.0",
+    "lodash": "^4.17.11",
+    "lory.js": "^2.5.2",
+    "masonry-layout": "^4.2.2",
+    "netlify-cli": "^2.2.0",
+    "prettier": "^1.15.2",
+    "scroll-lazy": "^1.0.3",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "webpack": "^4.21.0",
+    "webpack-md5-hash": "^0.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^4.1.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^1.0.0",
+    "datocms-client": "^0.7.5",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-tag": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "import-glob-loader": "^1.1.0",
+    "livereload-js": "^2.3.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.9.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "stylelint": "^9.6.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "assets/js/**/*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+[params]
+	env = "development"
+
+# datocms:start
+title = "Hugo DatoCMS Example "
+languageCode = "en"
+# datocms:end

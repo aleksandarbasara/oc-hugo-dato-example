@@ -1,0 +1,12 @@
+.env
+package-lock.json
+node_modules
+public
+content
+data
+npm-debug.log
+.idea
+yarn-error.log
+.netlify/
+/loc
+/oc-hugo-dato-example.iml

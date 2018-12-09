@@ -1,0 +1,20 @@
+{{ define "main" }}
+    <section class="single-post">
+    	<div class="container">
+            <div class="row">
+                <div class="column column-50 column-offset-25">
+                    <div class="moments-heding align__center">
+                        <h2 class="h1">{{ .Title }}</h2>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+            
+                <article class="post-content column column-80 column-offset-10">
+                    {{ .Content | replaceRE "<p>" "<p class=\"content mc-body-block\">" | safeHTML }}
+                </article>
+            </div>
+        </div>
+    </section>
+{{ end }}

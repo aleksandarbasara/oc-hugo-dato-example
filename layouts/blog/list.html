@@ -1,0 +1,19 @@
+{{ define "main" }}
+    <section class="section mt__5">
+        <div class="container">
+            <div class="">
+                <h2 class="title">{{ .Title }}</h2>
+                <p>{{ .Content }}</p>
+            </div>
+            <div class="columns">
+                {{ $paginator := .Paginate (where .Site.RegularPages "Section" "post") 5 }}
+                {{ range $paginator.Pages }}
+                    {{ partial "widgets/posts-3-col.html" . }}
+                {{ end }}
+            </div>
+            <div class="column pagination-column">
+                {{ template "_internal/pagination.html" . }}
+            </div>
+        </div>
+    </section>
+{{ end }}

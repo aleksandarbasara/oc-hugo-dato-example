@@ -1,0 +1,11 @@
+<section class="section">
+    <div class="container">
+        <h2 class="title">Latest Posts</h2>
+        <hr class="has-shadow"/>
+        <div class="columns">
+            {{ range first 3 (where .Pages "Section" "post") }}
+                {{ partial "widgets/posts-3-col.html" .}}
+            {{ end }}
+        </div>
+    </div>
+</section>

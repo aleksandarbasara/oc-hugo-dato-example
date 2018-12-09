@@ -1,0 +1,59 @@
+<nav id="navbar" class="navbar  has-shadow is-spaced" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ .Site.BaseURL }}">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="oc-navbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="oc-navbar" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="{{ .Site.BaseURL }}">
+                    Home
+                </a>
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                    <a class="navbar-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}" href="{{.URL}}">{{ .Name }}</a>
+                {{ end }}
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://gohugo.io/?ref=basara" target="_blank">
+                            Hugo
+                        </a>
+                        <a class="navbar-item" href="https://netlify.com/?ref=basara" target="_blank">
+                            Netlify
+                        </a>
+                        <a class="navbar-item" href="https://?ref=basara" target="_blank">
+                            DatoCMS
+                        </a>
+                        </a>
+                        <a class="navbar-item" href="https://bulma.io/?ref=basara" target="_blank">
+                            Bulma
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item" href="https://github.com/aleksandarbasara/oc-hugo-dato-example/issues" target="_blank">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <!-- Place this tag where you want the button to render. -->
+                    <a class="github-button" href="https://github.com/aleksandarbasara/oc-hugo-dato-example" data-icon="octicon-star" data-show-count="true" aria-label="Star aleksandarbasara/oc-hugo-dato-example on GitHub">Star</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
